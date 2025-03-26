@@ -13,5 +13,11 @@
     "dotenv": "16.4.7",
     "fastify": "5.2.2",
     "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.13",
+    "tsup": "8.4.0",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2"
   }
 }
