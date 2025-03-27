@@ -9,7 +9,3 @@ app
   .then(() => {
     console.log("🚀 HTTP Server running!");
   });
-
-app.get("/status", async (request, reply) => {
-  return reply.send();
-});
