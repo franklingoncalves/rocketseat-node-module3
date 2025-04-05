@@ -3,7 +3,6 @@ import { compare } from "bcryptjs";
 import { expect, describe, it } from "vitest";
 import { RegisterUseCase } from "./register";
 import { UserAlreadyExistsError } from "./erros/user-already-exits-error";
-import { string } from "zod";
 
 describe("Register Use Case", () => {
   it("should be able to register", async () => {
