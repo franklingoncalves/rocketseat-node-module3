@@ -19,9 +19,6 @@ export class CheckInUseCase {
     userId,
     gymId,
   }: CheckInUseCaseRequest): Promise<CheckInUseCaseResponse> {
-    const startOfTheDay = dayjs(date).startOf("date");
-    const endOfTheDay = dayjs(date).endOf("date");
-
     const checkInOnSameDate = await this.checkInsRepository.findByUserIdOnDate(
       userId,
       new Date()
