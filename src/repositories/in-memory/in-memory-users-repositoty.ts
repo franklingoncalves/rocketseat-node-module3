@@ -4,7 +4,7 @@ import { UsersRepository } from "../users-repository";
 export class InMemoryUsersRepository implements UsersRepository {
   public items: User[] = [];
 
-  findById(id: string): Promise<User | null> {
+  async findById(id: string): Promise<User | null> {
     const user = this.items.find((item) => item.id === id);
     return user || null;
   }
