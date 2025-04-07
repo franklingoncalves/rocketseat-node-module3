@@ -1,6 +1,5 @@
 import { GymsRepository } from "@/repositories/gyms-repository";
 import { Gym } from "@prisma/client";
-import { hash } from "bcryptjs";
 
 interface createGymUseCaseRequest {
   title: string;
