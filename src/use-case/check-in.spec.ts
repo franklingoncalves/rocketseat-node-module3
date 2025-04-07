@@ -21,8 +21,9 @@ describe("Check-In Use Case", () => {
       title: "Javascript Gym",
       description: "",
       phone: "",
-      latitude: new Decimal(0),
-      longitude: new Decimal(0),
+      latitude: new Decimal(-27.2092052),
+      longitude: new Decimal(-49.6401091),
+      created_at: new Date(),
     });
 
     vi.useFakeTimers();
@@ -38,8 +39,8 @@ describe("Check-In Use Case", () => {
     const { checkIn } = await sut.execute({
       gymId: "gym-01",
       userId: "user-01",
-      userLatitude: 0,
-      userLongitude: 0,
+      userLatitude: -27.2092052,
+      userLongitude: -49.6401091,
     });
 
     expect(checkIn.id).toEqual(expect.any(String));
@@ -51,16 +52,16 @@ describe("Check-In Use Case", () => {
     const { checkIn } = await sut.execute({
       gymId: "gym-01",
       userId: "user-01",
-      userLatitude: 0,
-      userLongitude: 0,
+      userLatitude: -27.2092052,
+      userLongitude: -49.6401091,
     });
 
     await expect(() =>
       sut.execute({
         gymId: "gym-01",
         userId: "user-01",
-        userLatitude: 0,
-        userLongitude: 0,
+        userLatitude: -27.2092052,
+        userLongitude: -49.6401091,
       })
     ).rejects.toBeInstanceOf(MaxNumberOfcheckInsError);
   });
@@ -71,8 +72,8 @@ describe("Check-In Use Case", () => {
     await sut.execute({
       gymId: "gym-01",
       userId: "user-01",
-      userLatitude: 0,
-      userLongitude: 0,
+      userLatitude: -27.2092052,
+      userLongitude: -49.6401091,
     });
 
     vi.setSystemTime(new Date(2022, 0, 21, 8, 0, 0));
@@ -80,8 +81,8 @@ describe("Check-In Use Case", () => {
     const { checkIn } = await sut.execute({
       gymId: "gym-01",
       userId: "user-01",
-      userLatitude: 0,
-      userLongitude: 0,
+      userLatitude: -27.2092052,
+      userLongitude: -49.6401091,
     });
 
     expect(checkIn.id).toEqual(expect.any(String));
