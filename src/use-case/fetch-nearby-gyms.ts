@@ -6,7 +6,7 @@ interface FetchNearbyGymsRequest {
   userLongitude: number;
 }
 
-interface SearchUseCaseResponse {
+interface FetchNearbyGymsResponse {
   gyms: Gym[];
 }
 
@@ -16,7 +16,7 @@ export class FetchNearbyGymsUseCase {
   async execute({
     userLatitude,
     userLongitude,
-  }: FetchNearbyGymsRequest): Promise<SearchUseCaseResponse> {
+  }: FetchNearbyGymsRequest): Promise<FetchNearbyGymsResponse> {
     const gyms = await this.gymsRepository.findManyNearby({
       latitude: userLatitude,
       longitude: userLongitude,

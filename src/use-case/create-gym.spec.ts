@@ -1,15 +1,14 @@
 import { expect, describe, it, beforeEach } from "vitest";
-import { createGymUseCase } from "./create-gym";
+import { CreateGymUseCase } from "./create-gym";
 import { InMemoryGymRepository } from "@/repositories/in-memory/in-memory-gym-repository";
-import { Decimal } from "@prisma/client/runtime/library";
 
 let gymsRepository: InMemoryGymRepository;
-let sut: createGymUseCase;
+let sut: CreateGymUseCase;
 
 describe("Create Gym Use Case", () => {
   beforeEach(() => {
     gymsRepository = new InMemoryGymRepository();
-    sut = new createGymUseCase(gymsRepository);
+    sut = new CreateGymUseCase(gymsRepository);
   });
 
   it("should be able to create gym", async () => {

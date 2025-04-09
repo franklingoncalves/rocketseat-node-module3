@@ -3,6 +3,7 @@ import { CheckInRepository } from "@/repositories/check-ins-repository";
 
 interface FetchUserCheckInsHistoryUseCaseRequest {
   userId: string;
+  page: number;
 }
 
 interface FetchUserCheckInsHistoryUseCaseResponse {

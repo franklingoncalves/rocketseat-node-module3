@@ -1,6 +1,5 @@
 import { expect, describe, it, beforeEach, afterEach, vi } from "vitest";
 import { InMemoryCheckInsRepository } from "@/repositories/in-memory/in-memory-check-ins-repostitory";
-import { Decimal } from "@prisma/client/runtime/library";
 import { GetUserMetricsUseCase } from "./get-user-metrics";
 
 let checkInRepository: InMemoryCheckInsRepository;
